@@ -20,7 +20,6 @@ class Cli
         puts "🤓 Here we go...."
         sleep(2)
         system "clear"
-        main_menu
     end
 
     def main_menu
