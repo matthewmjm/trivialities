@@ -33,11 +33,11 @@ class Cli
         sum = 0
         mulitplier = 0
         if $difficulty_selection == "hard"
-            puts "HARD"
+            multiplier = 30
         elsif $difficulty_selection == "medium"
-            puts "MEDIUM"
+            multiplier = 20
         else
-            puts "EASY"
+            multiplier = 10
         end
         while i < 10
             # system "clear"
@@ -52,6 +52,7 @@ class Cli
             puts "ANSWER SELECTION:  "        
             answer_select = gets.strip
             puts "\n"
+            puts multiplier
             sleep(1)
             # if answer_select == 
             system "clear"
