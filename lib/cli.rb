@@ -34,10 +34,16 @@ class Cli
         puts "\nChoice\n"
         main_choice = gets.strip
         if main_choice == "1"
+            system "clear"
+            sleep(0.5)
             puts "QUIZTIME"
         elsif main_choice == "2"
+            system "clear"
+            sleep(0.5)
             puts "SHOW ME DA MONEY!!"
         elsif main_choice == "3"
+            system "clear"
+            sleep(0.5)
             puts "DELETE"
         elsif main_choice == "4"
             system "clear"
