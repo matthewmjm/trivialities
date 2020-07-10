@@ -23,6 +23,31 @@ class Cli
         system "clear"
     end
 
+    def create_quiz
+        system "clear"
+        sleep(0.5)
+        puts "yo yo yo....here we go...\n\n"
+        sleep(0.5)
+        puts "Let's choose a topic for the questionionies:\n"
+        sleep(0.5)
+        puts "1, General Knowledge"
+        puts "2. Entertainment: Books"
+        puts "3. Entertainment: Film"
+        puts "4. Entertainment: Music"
+        puts "5. Entertainment: Television"
+        puts "6. Science & Nature"
+        puts "7. Sports"
+        puts "8. History"
+        puts "9. Celebrities"
+        puts "10. Animals\n\n"
+        puts "\nChoice\n"
+        category_choice = gets.strip
+        puts category_choice
+        sleep(2)
+
+
+    end
+
     def main_menu
         system "clear"
         puts "MAIN MENU\n\n"
@@ -37,6 +62,8 @@ class Cli
             system "clear"
             sleep(0.5)
             puts "QUIZTIME"
+            sleep(0.5)
+            create_quiz
         elsif main_choice == "2"
             system "clear"
             sleep(0.5)
@@ -59,6 +86,8 @@ class Cli
             sleep(1.5)
             return main_menu
         end
+
+
 
         
     end
