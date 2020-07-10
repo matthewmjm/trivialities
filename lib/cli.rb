@@ -2,14 +2,28 @@ class Cli
 
     def welcome
         system "clear"
-        puts "Welcome to Trivialities"
+        puts "🤩 Welcome to Trivialities 🥳"
+        sleep(0.25)
+        puts "     🗣     👥     👀"
+        puts "...where trivia ain't no big thing"
+        puts "\n\n\n\n"
         sleep(1.5)
     end
 
     def log_in
-        system "clear"
-        puts "Let's get this going!\n"
-        puts "To start off, what is your name so we know who we are dealing with here 😉 ?"
+        puts "Let's get this party started!\n"
+        puts ""
+        sleep(0.5)
+        puts "🎊     🥳     🎊"
+        sleep(0.5)
+        puts ""
+        puts "To start off, who's your daddy and what do he do?\n"
+        sleep(2.0)
+        puts "\n"
+        puts "Haha! 🤣😂 Just kidding... just a sample from our movie trivia questions there 😉"
+        sleep (1.25)
+        puts "\n"
+        puts "\nPlease tell us your name?"
         user = gets.strip
         $user = user
         puts "\n\n"
@@ -54,16 +68,16 @@ class Cli
             puts "\n"
             sleep(1)
             if answer_select == "a" || answer_select == "A"
-                puts "Ring-A-Ding-Ding!  You got it!"
+                puts "\n🤘\n \n🤑  Ring-A-Ding-Ding!  You got it!"
                 sum += (multiplier * 1)
                 puts "SCORE: #{sum}"
                 puts "\n\n\nHit enter and we will serve you up the next one\n"
                 letsmoveon = gets.strip
                 sleep(0.25)
             else
-                puts "\n💩 \nehhh....nice try"
+                puts "\n💩\n \n❌  ehhh....nice try     😭"
                 sleep (0.5)
-                puts "The correct answer is A. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+                puts "The correct answer is:    A. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
                 puts "SCORE: #{sum}"
                 puts "\n\n\nHit enter and we will serve you up the next one\n"
                 letsmoveon = gets.strip
@@ -249,7 +263,10 @@ class Cli
             puts "Goodbye #{$user}!!"
             sleep(0.5)
             puts "Come back soon!"
+            sleep(0.5)
+            puts "And don't forget to tell your friends!"
             sleep(3.0)
+            puts "we are outta here..."
             return "goodbye!"
         else
             puts "OOOPS...INVALID SELCTION"
