@@ -14,7 +14,7 @@ class Cli
         $user = user
         puts "\n\n"
         system "clear"
-        sleep(0.5)
+        sleep(0.15)
         puts "Hi #{user}!!"
         sleep(1)
         puts "\n\n"       
@@ -26,6 +26,12 @@ class Cli
         puts "🤓 Here we go...."
         sleep(2)
         system "clear"
+    end
+
+    def api_call
+        quiz_response = RestClient.get($api_query)
+        quiz_data = JSON.parse(quiz_response)
+        puts quiz_data["results"]
     end
 
     def create_quiz
@@ -62,7 +68,7 @@ class Cli
         puts "Okay, now you get to choose the difficulty level.\n"
         sleep(1.0)
         puts "🙃 Or in other words, how hard do you wanna use you noggin? 🧠\n\n"
-        sleep(2)
+        sleep(1)
         puts "Okay?  Here goes:\n"
         sleep(0.5)
         difficulty_selection = []
@@ -160,10 +166,9 @@ class Cli
         $api_query = ""
         $api_query = "https://opentdb.com/api.php?amount=10&category=#{category_code}&difficulty=#{difficulty_selection}&type=multiple"
         puts $api_query
+        sleep(1.0)
+        api_call
     end
-
-    # def api_call
-    # end
 
     def main_menu
         system "clear"
