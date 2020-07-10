@@ -28,10 +28,44 @@ class Cli
         system "clear"
     end
 
+    def question_loop
+        i = 0
+        sum = 0
+        mulitplier = 0
+        if $difficulty_selection == "hard"
+            puts "HARD"
+        elsif $difficulty_selection == "medium"
+            puts "MEDIUM"
+        else
+            puts "EASY"
+        end
+        while i < 10
+            # system "clear"
+            puts "QUESTION #{i+1}"
+            puts $quiz_data['results'][i]["question"].chomp('""')
+            puts "\n"
+            puts "A. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+            puts "B. #{$quiz_data['results'][i]["incorrect_answers"][0].chomp('""')}"
+            puts "C. #{$quiz_data['results'][i]["incorrect_answers"][1].chomp('""')}"
+            puts "D. #{$quiz_data['results'][i]["incorrect_answers"][2].chomp('""')}"
+            puts "\n"
+            puts "ANSWER SELECTION:  "        
+            answer_select = gets.strip
+            puts "\n"
+            sleep(1)
+            # if answer_select == 
+            system "clear"
+            i += 1
+        end
+
+    end
+
     def api_call
         quiz_response = RestClient.get($api_query)
-        quiz_data = JSON.parse(quiz_response)
-        puts quiz_data["results"]
+        $quiz_data = JSON.parse(quiz_response)
+        puts $quiz_data["results"]
+        system "clear"
+        question_loop
     end
 
     def create_quiz
@@ -40,7 +74,7 @@ class Cli
         sleep(0.5)
         puts "YAZZzzzz!....so here we go...\n\n"
         sleep(0.5)
-        puts "Let's choose a topic for the questionionies:\n"
+        puts "Let's choose a topic for the questionies:\n"
         sleep(0.5)
         category_selection = []
         category_code = []
@@ -71,16 +105,16 @@ class Cli
         sleep(1)
         puts "Okay?  Here goes:\n"
         sleep(0.5)
-        difficulty_selection = []
-        difficulty_selection = ["easy", "medium", "hard"]
+        $difficulty_selection = []
+        $difficulty_selection = ["easy", "medium", "hard"]
         puts "1. Easy Peezy 😁  10 points/correct response"
         puts "2. Medium/Just Right 🙂  20 points/correct response"
         puts "3. Hard/Are you Kiddin Me? 😫  30 points/correct response\n\n"
         puts "\nAnd your choice?\n"
         difficulty_choice = gets.strip
         puts "\n"
-        difficulty_selection = difficulty_selection[difficulty_choice.to_i-1]
-        puts difficulty_selection
+        $difficulty_selection = $difficulty_selection[difficulty_choice.to_i-1]
+        puts $difficulty_selection
         puts "Excellent choice, #{$user}!"
         sleep(1.5)
         system "clear"
@@ -95,12 +129,12 @@ class Cli
         sleep(0.5)
         puts "category: #{category_selection}"
         sleep(0.5)
-        puts "difficulty: #{difficulty_selection}"
+        puts "difficulty: #{$difficulty_selection}"
         puts "\n\n"
         sleep(1.5)
         puts "We good?"
         sleep(0.5) 
-        puts "Or you wanna shake these questionionies up another way?\n"
+        puts "Or you wanna shake these questionies up another way?\n"
         sleep(1.0)
         puts "1. Let's Rock! 🤘"
         puts "2. Err? Ya know, I need another bite at the apple 🍎"
@@ -164,8 +198,8 @@ class Cli
         sleep(2.0)
         system "clear"
         $api_query = ""
-        $api_query = "https://opentdb.com/api.php?amount=10&category=#{category_code}&difficulty=#{difficulty_selection}&type=multiple"
-        puts $api_query
+        $api_query = "https://opentdb.com/api.php?amount=10&category=#{category_code}&difficulty=#{$difficulty_selection}&type=multiple"
+        # puts $api_query
         sleep(1.0)
         api_call
     end
