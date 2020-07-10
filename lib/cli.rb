@@ -52,9 +52,23 @@ class Cli
             puts "ANSWER SELECTION:  "        
             answer_select = gets.strip
             puts "\n"
-            puts multiplier
             sleep(1)
-            # if answer_select == 
+            if answer_select == "a" || answer_select == "A"
+                puts "Ring-A-Ding-Ding!  You got it!"
+                sum += (multiplier * 1)
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            else
+                puts "\n💩 \nehhh....nice try"
+                sleep (0.5)
+                puts "The correct answer is A. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            end
             system "clear"
             i += 1
         end
