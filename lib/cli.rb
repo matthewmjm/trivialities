@@ -9,7 +9,7 @@ class Cli
     def log_in
         system "clear"
         puts "Let's get this going!\n"
-        puts "To start off, what is your name?"
+        puts "To start off, what is your name so we know who we are dealing with here 😉 ?"
         user = gets.strip
         $user = user
         puts "\n\n"
@@ -20,7 +20,8 @@ class Cli
         puts "\n\n"       
         system "clear"
         sleep(0.5)
-        puts "#{$user} you are set!   Let do it!"
+        puts "#{$user}, you are set!   Let do it!"
+        puts "\n\n"
         sleep(1)
         puts "🤓 Here we go...."
         sleep(2)
@@ -31,12 +32,14 @@ class Cli
         system "clear"
         puts "QUIZTIME"
         sleep(0.5)
-        puts "yo yo yo....here we go...\n\n"
+        puts "YAZZzzzz!....so here we go...\n\n"
         sleep(0.5)
         puts "Let's choose a topic for the questionionies:\n"
         sleep(0.5)
         category_selection = []
+        category_code = []
         category_selection = ["General Knowledge", "Entertainment: Books", "Entertainment: Film", "Entertainment: Music", "Entertainment: Television", "Science & Nature", "Sports", "History", "Celebrities", "Animals"]
+        category_code = [9, 10, 11, 12, 14, 17, 21, 23, 26, 27]
         puts "1. General Knowledge 🧐"
         puts "2. Books 📚"
         puts "3. Film 🎥"
@@ -52,6 +55,7 @@ class Cli
         puts "\n"
         category_selection = category_selection[category_choice.to_i-1]
         puts category_selection
+        category_code = category_code[category_choice.to_i-1]
         puts "Great choice, #{$user}!"
         sleep(1.5)
         system "clear"
@@ -62,7 +66,7 @@ class Cli
         puts "Okay?  Here goes:\n"
         sleep(0.5)
         difficulty_selection = []
-        difficulty_selection = ["Easy", "Medium", "Hard"]
+        difficulty_selection = ["easy", "medium", "hard"]
         puts "1. Easy Peezy 😁  10 points/correct response"
         puts "2. Medium/Just Right 🙂  20 points/correct response"
         puts "3. Hard/Are you Kiddin Me? 😫  30 points/correct response\n\n"
@@ -74,24 +78,9 @@ class Cli
         puts "Excellent choice, #{$user}!"
         sleep(1.5)
         system "clear"
-        puts "One last thing...:"
-        sleep(0.5)
-        puts "Now you get to choose the type of questions.\n\n"
-        sleep(2)
-        puts "After this, we can get down to business:\n\n\n"
-        sleep(0.5)
-        type_selection = []
-        type_selection = ["Multiple Choice", "True / False"]
-        puts "1. Multiple Choice ❓ "
-        puts "2. True or False 👍👎\n\n"
-        puts "\nAnd your choice?\n"
-        type_choice = gets.strip
-        type_selection = type_selection[type_choice.to_i-1]
-        type_selection
-        puts "Got it!"
-        puts "\n"
-        sleep(0.5)
         puts "Right on, #{$user}, just to confirm..."
+        sleep(0.25)
+        puts "so we have it right.\n\n"
         puts "\n"
         sleep(0.5)
         puts "Presenting..."
@@ -101,16 +90,14 @@ class Cli
         puts "category: #{category_selection}"
         sleep(0.5)
         puts "difficulty: #{difficulty_selection}"
-        sleep(0.5)
-        puts "type of question: #{type_selection}"
         puts "\n\n"
         sleep(1.5)
         puts "We good?"
         sleep(0.5) 
-        puts "Or you want shake it up another way?\n"
+        puts "Or you wanna shake these questionionies up another way?\n"
         sleep(1.0)
         puts "1. Let's Rock! 🤘"
-        puts "2. Need another bite at the apple 🍎"
+        puts "2. Err? Ya know, I need another bite at the apple 🍎"
         puts "3. What was I thinking?...Take me back to the Main Menu 🥴\n\n"
         sleep(0.5)
         puts "Whatcha think?\n"
@@ -124,52 +111,59 @@ class Cli
             main_menu
         else puts "LET'S ROLL!!"
         end
-        sleep(0.5)
-        system "clear"
-        sleep(0.25)
+        sleep(1.5)
+        puts "\n\n\n"
+        # system "clear"
+        sleep(0.15)
         puts "W"
-        sleep(0.25)
+        sleep(0.15)
         system "clear"
         puts "WO" 
-        sleep(0.25)      
+        sleep(0.15)      
         system "clear"
         puts "WOR" 
-        sleep(0.25)      
+        sleep(0.15)      
         system "clear"
         puts "WORK"
-        sleep(0.25)       
+        sleep(0.15)       
         system "clear"
         puts "WORKI" 
-        sleep(0.25)      
+        sleep(0.15)      
         system "clear"
         puts "WORKIN"
-        sleep(0.25)       
+        sleep(0.15)       
         system "clear"
         puts "WORKING"
-        sleep(0.25)       
+        sleep(0.15)       
         system "clear"
         puts "WORKING O"
-        sleep(0.25)       
+        sleep(0.15)       
         system "clear"
         puts "WORKING ON" 
-        sleep(0.25)      
+        sleep(0.15)      
         system "clear"
         puts "WORKING ON I"
-        sleep(0.25)            
+        sleep(0.15)            
         system "clear"
         puts "WORKING ON IT"
-        sleep(0.25)             
+        sleep(0.15)             
         system "clear"
         puts "WORKING ON IT."
-        sleep(0.25)             
+        sleep(0.15)             
         system "clear"
         puts "WORKING ON IT.." 
-        sleep(0.25)            
+        sleep(0.15)            
         system "clear"
         puts "WORKING ON IT..."      
         sleep(2.0)
         system "clear"
+        $api_query = ""
+        $api_query = "https://opentdb.com/api.php?amount=10&category=#{category_code}&difficulty=#{difficulty_selection}&type=multiple"
+        puts $api_query
     end
+
+    # def api_call
+    # end
 
     def main_menu
         system "clear"
