@@ -17,13 +17,13 @@ class Cli
         puts "🎊     🥳     🎊"
         sleep(0.5)
         puts ""
-        puts "To start off, who's your daddy and what do he do?\n"
-        sleep(2.0)
+        # puts "To start off, who's your daddy and what do he do?\n"
+        # sleep(2.0)
+        # puts "\n"
+        # puts "Haha! 🤣😂 Just kidding... just a sample from our movie trivia questions there 😉"
+        # sleep (1.25)
         puts "\n"
-        puts "Haha! 🤣😂 Just kidding... just a sample from our movie trivia questions there 😉"
-        sleep (1.25)
-        puts "\n"
-        puts "\nPlease tell us your name?"
+        puts "\nTo start off, Please tell us your name?"
         user = gets.strip
         $user = user
         puts "\n\n"
@@ -42,6 +42,11 @@ class Cli
         system "clear"
     end
 
+    def exit_game
+        system "clear"
+        return
+    end
+
     def question_loop
         i = 0
         sum = 0
@@ -54,7 +59,7 @@ class Cli
             multiplier = 10
         end
         while i < 10
-            # system "clear"
+            #1
             puts "QUESTION #{i+1}"
             puts $quiz_data['results'][i]["question"].chomp('""')
             puts "\n"
@@ -85,13 +90,308 @@ class Cli
             end
             system "clear"
             i += 1
+            #2
+            puts "QUESTION #{i+1}"
+            puts $quiz_data['results'][i]["question"].chomp('""')
+            puts "\n"
+            puts "A. #{$quiz_data['results'][i]["incorrect_answers"][1].chomp('""')}"
+            puts "B. #{$quiz_data['results'][i]["incorrect_answers"][0].chomp('""')}"
+            puts "C. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+            puts "D. #{$quiz_data['results'][i]["incorrect_answers"][2].chomp('""')}"
+            puts "\n"
+            puts "ANSWER SELECTION:  "        
+            answer_select = gets.strip
+            puts "\n"
+            sleep(1)
+            if answer_select == "c" || answer_select == "C"
+                puts "\n🤘\n \n🤑  Ring-A-Ding-Ding!  You got it!"
+                sum += (multiplier * 1)
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            else
+                puts "\n💩\n \n❌  ehhh....nice try     😭"
+                sleep (0.5)
+                puts "The correct answer is:    C. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            end
+            system "clear"
+            i += 1
+            #3
+            puts "QUESTION #{i+1}"
+            puts $quiz_data['results'][i]["question"].chomp('""')
+            puts "\n"
+            puts "A. #{$quiz_data['results'][i]["incorrect_answers"][1].chomp('""')}"
+            puts "B. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+            puts "C. #{$quiz_data['results'][i]["incorrect_answers"][0].chomp('""')}"
+            puts "D. #{$quiz_data['results'][i]["incorrect_answers"][2].chomp('""')}"
+            puts "\n"
+            puts "ANSWER SELECTION:  "        
+            answer_select = gets.strip
+            puts "\n"
+            sleep(1)
+            if answer_select == "b" || answer_select == "B"
+                puts "\n🤘\n \n🤑  Ring-A-Ding-Ding!  You got it!"
+                sum += (multiplier * 1)
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            else
+                puts "\n💩\n \n❌  ehhh....nice try     😭"
+                sleep (0.5)
+                puts "The correct answer is:    B. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            end
+            system "clear"
+            i += 1
+            #4
+            puts "QUESTION #{i+1}"
+            puts $quiz_data['results'][i]["question"].chomp('""')
+            puts "\n"
+            puts "A. #{$quiz_data['results'][i]["incorrect_answers"][1].chomp('""')}"
+            puts "B. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+            puts "C. #{$quiz_data['results'][i]["incorrect_answers"][0].chomp('""')}"
+            puts "D. #{$quiz_data['results'][i]["incorrect_answers"][2].chomp('""')}"
+            puts "\n"
+            puts "ANSWER SELECTION:  "        
+            answer_select = gets.strip
+            puts "\n"
+            sleep(1)
+            if answer_select == "b" || answer_select == "B"
+                puts "\n🤘\n \n🤑  Ring-A-Ding-Ding!  You got it!"
+                sum += (multiplier * 1)
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            else
+                puts "\n💩\n \n❌  ehhh....nice try     😭"
+                sleep (0.5)
+                puts "The correct answer is:    B. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            end
+            system "clear"
+            i += 1
+            #5
+            puts "QUESTION #{i+1}"
+            puts $quiz_data['results'][i]["question"].chomp('""')
+            puts "\n"
+            puts "A. #{$quiz_data['results'][i]["incorrect_answers"][1].chomp('""')}"
+            puts "B. #{$quiz_data['results'][i]["incorrect_answers"][0].chomp('""')}"
+            puts "C. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+            puts "D. #{$quiz_data['results'][i]["incorrect_answers"][2].chomp('""')}"
+            puts "\n"
+            puts "ANSWER SELECTION:  "        
+            answer_select = gets.strip
+            puts "\n"
+            sleep(1)
+            if answer_select == "c" || answer_select == "C"
+                puts "\n🤘\n \n🤑  Ring-A-Ding-Ding!  You got it!"
+                sum += (multiplier * 1)
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            else
+                puts "\n💩\n \n❌  ehhh....nice try     😭"
+                sleep (0.5)
+                puts "The correct answer is:    C. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            end
+            system "clear"
+            i += 1
+            #6
+            puts "QUESTION #{i+1}"
+            puts $quiz_data['results'][i]["question"].chomp('""')
+            puts "\n"
+            puts "A. #{$quiz_data['results'][i]["incorrect_answers"][1].chomp('""')}"
+            puts "B. #{$quiz_data['results'][i]["incorrect_answers"][0].chomp('""')}"
+            puts "C. #{$quiz_data['results'][i]["incorrect_answers"][2].chomp('""')}"
+            puts "D. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+            puts "\n"
+            puts "ANSWER SELECTION:  "        
+            answer_select = gets.strip
+            puts "\n"
+            sleep(1)
+            if answer_select == "d" || answer_select == "D"
+                puts "\n🤘\n \n🤑  Ring-A-Ding-Ding!  You got it!"
+                sum += (multiplier * 1)
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            else
+                puts "\n💩\n \n❌  ehhh....nice try     😭"
+                sleep (0.5)
+                puts "The correct answer is:    D. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            end
+            system "clear"
+            i += 1
+            #7
+            puts "QUESTION #{i+1}"
+            puts $quiz_data['results'][i]["question"].chomp('""')
+            puts "\n"
+            puts "A. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+            puts "B. #{$quiz_data['results'][i]["incorrect_answers"][0].chomp('""')}"
+            puts "C. #{$quiz_data['results'][i]["incorrect_answers"][1].chomp('""')}"
+            puts "D. #{$quiz_data['results'][i]["incorrect_answers"][2].chomp('""')}"
+            puts "\n"
+            puts "ANSWER SELECTION:  "        
+            answer_select = gets.strip
+            puts "\n"
+            sleep(1)
+            if answer_select == "a" || answer_select == "A"
+                puts "\n🤘\n \n🤑  Ring-A-Ding-Ding!  You got it!"
+                sum += (multiplier * 1)
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            else
+                puts "\n💩\n \n❌  ehhh....nice try     😭"
+                sleep (0.5)
+                puts "The correct answer is:    A. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            end
+            system "clear"
+            i += 1
+            #8
+            puts "QUESTION #{i+1}"
+            puts $quiz_data['results'][i]["question"].chomp('""')
+            puts "\n"
+            puts "A. #{$quiz_data['results'][i]["incorrect_answers"][1].chomp('""')}"
+            puts "B. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+            puts "C. #{$quiz_data['results'][i]["incorrect_answers"][0].chomp('""')}"
+            puts "D. #{$quiz_data['results'][i]["incorrect_answers"][2].chomp('""')}"
+            puts "\n"
+            puts "ANSWER SELECTION:  "        
+            answer_select = gets.strip
+            puts "\n"
+            sleep(1)
+            if answer_select == "b" || answer_select == "B"
+                puts "\n🤘\n \n🤑  Ring-A-Ding-Ding!  You got it!"
+                sum += (multiplier * 1)
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            else
+                puts "\n💩\n \n❌  ehhh....nice try     😭"
+                sleep (0.5)
+                puts "The correct answer is:    B. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            end
+            system "clear"
+            i += 1
+            #9
+            puts "QUESTION #{i+1}"
+            puts $quiz_data['results'][i]["question"].chomp('""')
+            puts "\n"
+            puts "A. #{$quiz_data['results'][i]["incorrect_answers"][1].chomp('""')}"
+            puts "B. #{$quiz_data['results'][i]["incorrect_answers"][0].chomp('""')}"
+            puts "C. #{$quiz_data['results'][i]["incorrect_answers"][2].chomp('""')}"
+            puts "D. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+            puts "\n"
+            puts "ANSWER SELECTION:  "        
+            answer_select = gets.strip
+            puts "\n"
+            sleep(1)
+            if answer_select == "d" || answer_select == "D"
+                puts "\n🤘\n \n🤑  Ring-A-Ding-Ding!  You got it!"
+                sum += (multiplier * 1)
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            else
+                puts "\n💩\n \n❌  ehhh....nice try     😭"
+                sleep (0.5)
+                puts "The correct answer is:    D. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+                puts "SCORE: #{sum}"
+                puts "\n\n\nHit enter and we will serve you up the next one\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            end
+            system "clear"
+            i += 1
+            #10
+            puts "QUESTION #{i+1}"
+            puts $quiz_data['results'][i]["question"].chomp('""')
+            puts "\n"
+            puts "A. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+            puts "B. #{$quiz_data['results'][i]["incorrect_answers"][0].chomp('""')}"
+            puts "C. #{$quiz_data['results'][i]["incorrect_answers"][1].chomp('""')}"
+            puts "D. #{$quiz_data['results'][i]["incorrect_answers"][2].chomp('""')}"
+            puts "\n"
+            puts "ANSWER SELECTION:  "        
+            answer_select = gets.strip
+            puts "\n"
+            sleep(1)
+            if answer_select == "a" || answer_select == "A"
+                puts "\n🤘\n \n🤑  Ring-A-Ding-Ding!  You got it!"
+                sum += (multiplier * 1)
+                puts "And that is end of the Quiz"
+                puts "\n\n\nHit enter to see your FINAL SCORE!\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            else
+                puts "\n💩\n \n❌  ehhh....nice try     😭"
+                sleep (0.5)
+                puts "The correct answer is:    A. #{$quiz_data['results'][i]["correct_answer"].chomp('""')}"
+                puts "And that is end of the Quiz"
+                puts "\n\n\nHit enter to see your FINAL SCORE!\n"
+                letsmoveon = gets.strip
+                sleep(0.25)
+            end
+            # system "clear"
+            i += 1
         end
-
+        puts "FINAL SCORE: #{sum}"
+        # sleep(1)
+        # system "clear"
+        # puts "FINAL SCORE: #{sum}"
+        # sleep(1)
+        # system "clear"
+        # puts "FINAL SCORE: #{sum}"
+        # sleep(1)
+        # system "clear"
+        # puts "FINAL SCORE: #{sum}"
+        # sleep(1)
+        # system "clear"
+        # puts "FINAL SCORE: #{sum}"
+        # sleep(1)
+        # system "clear"
     end
 
     def api_call
         quiz_response = RestClient.get($api_query)
         $quiz_data = JSON.parse(quiz_response)
+        # $quiz_data = JSON.parse(quiz_response.gsub! \&quot,'"')
+        # $quiz_data = $quiz_data.sub! '&quot','"'
         puts $quiz_data["results"]
         system "clear"
         question_loop
@@ -103,7 +403,7 @@ class Cli
         sleep(0.5)
         puts "YAZZzzzz!....so here we go...\n\n"
         sleep(0.5)
-        puts "Let's choose a topic for the questionies:\n"
+        puts "Let's choose a topic for the quiz:\n"
         sleep(0.5)
         category_selection = []
         category_code = []
@@ -163,7 +463,7 @@ class Cli
         sleep(1.5)
         puts "We good?"
         sleep(0.5) 
-        puts "Or you wanna shake these questionies up another way?\n"
+        puts "Or you wanna shake this up another way?\n"
         sleep(1.0)
         puts "1. Let's Rock! 🤘"
         puts "2. Err? Ya know, I need another bite at the apple 🍎"
@@ -265,9 +565,10 @@ class Cli
             puts "Come back soon!"
             sleep(0.5)
             puts "And don't forget to tell your friends!"
-            sleep(3.0)
-            puts "we are outta here..."
-            return "goodbye!"
+            sleep(1.0)
+            puts "outta here..."
+            sleep(1.5)
+            exit_game
         else
             puts "OOOPS...INVALID SELCTION"
             sleep(0.5)
